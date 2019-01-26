@@ -1,9 +1,17 @@
 import React from 'react';
 
-const WritingPrompt = () => {
-  return (
-    <h1>Hello World </h1>
-  );
-};
+class WritingPrompt extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      topic: '',
+    };
+  }
+
+  render() {
+    return <h1> Hello World </h1>;
+  }
+}
 
 export default WritingPrompt;
