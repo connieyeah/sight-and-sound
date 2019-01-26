@@ -5,7 +5,7 @@ import React from 'react';
 import axios from 'axios';
 
 import Topic from './Topic';
-import StoryBlock from './StoryBlock';
+import Story from './Story';
 import TextInput from './TextInput';
 
 class WritingPrompt extends React.Component {
@@ -49,10 +49,12 @@ class WritingPrompt extends React.Component {
       testState,
     };
 
+    const fakeData = [faker.lorem.paragraphs(2), faker.lorem.paragraphs(2), faker.lorem.paragraphs(2)];
+
     return (
       <div>
         <Topic topic={topic} />
-        <StoryBlock content={content} />
+        <Story passages={fakeData} />
         <TextInput {...handleTextChangeProps} />
       </div>
     );

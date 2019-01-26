@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const StoryBlock = ({ content }) => (
+const StoryBlock = ({ passage }) => (
   <p>
-    {content}
+    {passage}
   </p>
 );
 
 StoryBlock.propTypes = {
-  content: PropTypes.string.isRequired,
+  passage: PropTypes.string.isRequired,
 };
 
 export default StoryBlock;

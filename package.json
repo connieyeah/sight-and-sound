@@ -37,6 +37,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "lodash": "^4.17.11",
     "morgan": "^1.9.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
