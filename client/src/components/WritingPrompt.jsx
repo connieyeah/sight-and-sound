@@ -8,13 +8,31 @@ import Topic from './Topic';
 import Story from './Story';
 import TextInput from './TextInput';
 
+const fakeData = [
+  [
+    { text: faker.lorem.paragraphs(2), votes: 4 },
+    { text: faker.lorem.paragraphs(2), votes: 2 },
+    { text: faker.lorem.paragraphs(2), votes: 1 },
+  ],
+  [
+    { text: faker.lorem.paragraphs(2), votes: 19 },
+    { text: faker.lorem.paragraphs(2), votes: 17 },
+    { text: faker.lorem.paragraphs(2), votes: 16 },
+  ],
+  [
+    { text: faker.lorem.paragraphs(2), votes: 29 },
+    { text: faker.lorem.paragraphs(2), votes: 28 },
+    { text: faker.lorem.paragraphs(2), votes: 0 },
+  ],
+];
+
 class WritingPrompt extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       topic: 'Lorem Ipsum',
-      content: faker.lorem.paragraphs(2),
+      passages: fakeData,
       testState: 'TEST',
     };
 
@@ -42,19 +60,17 @@ class WritingPrompt extends React.Component {
   }
 
   render() {
-    const { topic, content, testState } = this.state;
+    const { topic, passages, testState } = this.state;
     const handleTextChangeProps = {
       handleTextChange: this.handleTextChange,
       handleSubmit: this.handleSubmit,
       testState,
     };
 
-    const fakeData = [faker.lorem.paragraphs(2), faker.lorem.paragraphs(2), faker.lorem.paragraphs(2)];
-
     return (
       <div>
         <Topic topic={topic} />
-        <Story passages={fakeData} />
+        <Story passages={passages} />
         <TextInput {...handleTextChangeProps} />
       </div>
     );
