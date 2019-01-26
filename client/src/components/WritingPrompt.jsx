@@ -1,16 +1,18 @@
 import React from 'react';
+import Topic from './Topic';
 
 class WritingPrompt extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      topic: '',
+      topic: 'Lorem Ipsum',
     };
   }
 
   render() {
-    return <h1> Hello World </h1>;
+    const { topic } = this.state;
+    return <Topic topic={topic} />;
   }
 }
 
