@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable-next-line */
 import faker from 'faker'; // TODO: Remove this when 
 import React from 'react';
@@ -45,6 +46,7 @@ class WritingPrompt extends React.Component {
     const handleTextChangeProps = {
       handleTextChange: this.handleTextChange,
       handleSubmit: this.handleSubmit,
+      testState,
     };
 
     return (
