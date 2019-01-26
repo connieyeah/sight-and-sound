@@ -1,6 +1,7 @@
 /* eslint-disable-next-line */
 import faker from 'faker'; // TODO: Remove this when 
 import React from 'react';
+import axios from 'axios';
 
 import Topic from './Topic';
 import StoryBlock from './StoryBlock';
@@ -13,16 +14,44 @@ class WritingPrompt extends React.Component {
     this.state = {
       topic: 'Lorem Ipsum',
       content: faker.lorem.paragraphs(2),
+      testState: 'TEST',
     };
+
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { testState } = this.state;
+    const payload = {
+      content: testState,
+    };
+    axios.post('/create', payload)
+      .then(console.log)
+      .catch(console.log);
+  }
+
+  handleTextChange(e) {
+    // This needs to post, and then grab the content
+    e.preventDefault();
+    this.setState({
+      testState: e.target.value,
+    });
   }
 
   render() {
-    const { topic, content } = this.state;
+    const { topic, content, testState } = this.state;
+    const handleTextChangeProps = {
+      handleTextChange: this.handleTextChange,
+      handleSubmit: this.handleSubmit,
+    };
+
     return (
       <div>
         <Topic topic={topic} />
         <StoryBlock content={content} />
-        <TextInput />
+        <TextInput {...handleTextChangeProps} />
       </div>
     );
   }
