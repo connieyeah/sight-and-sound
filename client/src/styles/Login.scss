@@ -1,0 +1,62 @@
+.button__login-spotify {
+  background-color: #1DB954;
+  color: #FFFFFF;
+  padding: 15px 15px;
+  font-weight: 500;
+  font-size: 2rem;
+  border-radius: 6px;
+  margin: 15px 0px 15px 0px;
+}
+
+.button__login-spotify:hover .button__login-spotify:active{
+  background-color: #189644;
+}
+
+.button__login-spotify:focus {
+  background-color: #FFFFFF;
+  color: #838383;
+  opacity: 0.7;
+}
+
+
+@media screen and (min-width: 416px) {
+  .container__index {
+    h1 {
+      font-size: 8rem;
+      color: #FFFFFF;
+    }
+    h2 {
+      font-size: 3rem;
+      color: #333333;
+    }
+    font-family: Helvetica Neue, Helvetica, Aerial, sans-serif;
+    text-align: center;
+    background-color: rgb(211,211,0.3);
+    padding: 2.4rem 4rem; 
+  }
+  
+  .glyphicon {
+    font-size: 50px
+  }
+}
+
+@media screen and (max-width:415px) {
+  .container__index {
+    h1 {
+      font-size: 4rem;
+      color: #FFFFFF;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: #333333;
+    }
+    font-family: Helvetica Neue, Helvetica, Aerial, sans-serif;
+    text-align: center;
+    background-color: rgb(211,211,0.3);
+    padding: 2.4rem 4rem; 
+  }
+  
+  .glyphicon {
+    font-size: 30px
+  }
+}
