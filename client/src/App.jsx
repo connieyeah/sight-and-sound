@@ -34,7 +34,6 @@ class App extends React.Component {
             : <Route path="/" exact component={Login} />
           }
         </div>
-        
       </Router>
     )
   }
