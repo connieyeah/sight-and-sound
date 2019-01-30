@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-// import Keywords from '../components/Keywords.jsx';
+import styles from '../styles/Search.scss';
+
+import Keywords from '../components/Keywords.jsx';
 
 const getReqParams = (accessToken) => ({
   dataType: 'json',
@@ -14,7 +16,8 @@ class Search extends React.Component {
     this.state = {
       urlSearchInput: '',
       hasSearched: false,
-      dataFromClarifai: null
+      clarifaiData: null,
+      spotifyData: null
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,10 +26,9 @@ class Search extends React.Component {
 
   handleChange(event) {
     this.setState({
-      urlSearchInput: event.target.value
+      urlSearchInput: 'https:'+event.target.value
     })
   }
-
 
   getSearchApi(searchTerm) {
     const accessToken = localStorage.getItem('accessToken');
@@ -34,7 +36,12 @@ class Search extends React.Component {
     // console.log(`this is searchTerm`, searchTerm)
     axios.get('https://api.spotify.com/v1/search?q=' + searchTerm + '&type=track', getReqParams(accessToken))
       .then(response => {
-        console.log(`response from spotify`, response)
+        // var tracks = Object.values(map((response) => (response.data.name)))
+        console.log(`response from spotify`, response.data.tracks.items[0].name)
+        // console.log(`these are tracks`, tracks)
+        this.setState({
+          spotifyData: ''
+        })
       })
   }
 
@@ -47,12 +54,10 @@ class Search extends React.Component {
       urlSearchInput,
     })
     .then((response) => {
-      // This response should have data from Clarifi Api
       // console.log(`response from clarifai`, response.data[0]);
-      // Save the data to state if needed
       this.setState({
         hasSearched: true,
-        dataFromClarifai: response.data[0]
+        clarifaiData: response.data
       })
       this.getSearchApi(response.data[0])
     })
@@ -61,12 +66,10 @@ class Search extends React.Component {
     })
   }
 
-
-
   render() {
     const hasSearched = this.state.hasSearched;
     return (
-      <div>
+      <div className={styles.search__container}>
         {(!hasSearched) ? (
           <div>
           <h1>SEARCH</h1>
@@ -76,7 +79,7 @@ class Search extends React.Component {
               <input 
                 type="text"
                 name=""
-                onChange={this.handleChange}
+                required onChange={this.handleChange}
               />
             </label>
           </form>
@@ -84,8 +87,17 @@ class Search extends React.Component {
           </div>
           ) : (
           <div>
-          <h1>Descriptions</h1>
-            {/* <Keywords words={this.state.dataFromClarifai} /> */}
+            <img src={this.state.urlSearchInput} />
+            <h2>AI visual recognition</h2>
+            <span>
+            <Keywords words={this.state.clarifaiData} />
+            </span>
+            <span>
+              <h2>Song based off image</h2>
+              <div class={styles.embed__container}>
+                <iframe src='https://embed.spotify.com/?uri=spotify:track:6oKeVXkFW8W91cyoWVgRHE' frameborder='0' allowtransparency='true'></iframe>
+              </div>
+            </span>
           </div>
           )
         }
@@ -93,5 +105,6 @@ class Search extends React.Component {
     )
   }
 }
+
 
 export default Search;

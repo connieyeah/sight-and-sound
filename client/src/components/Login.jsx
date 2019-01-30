@@ -4,7 +4,7 @@ import styles from '../styles/Login.scss'
 
 class Login extends React.Component {
   render() {
-    console.log(`HI IM AEAKE LOGIN PAGE`, this.props)
+    // console.log(`HI IM AWAKE LOGIN PAGE`, this.props)
     return (
       <div className={styles.container__index}>
         <h1>Music MVP</h1>

@@ -4,6 +4,7 @@ import Login from './components/Login.jsx';
 import Search from './components/Search.jsx';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class App extends React.Component {
   }
 
   render() {
-    const tokenExist = this.state.tokenExist
+    const tokenExist = this.state.tokenExist;
     return (
       <Router>
         <div>
@@ -34,7 +35,7 @@ class App extends React.Component {
             : <Route path="/" exact component={Login} />
           }
         </div>
-      </Router>
+       </Router>
     )
   }
 }

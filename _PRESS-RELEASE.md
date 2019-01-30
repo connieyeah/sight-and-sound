@@ -22,14 +22,19 @@ Once the project moves into development, the press release can be used as a touc
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
 
+  Application that ties in visual and auditory senses, like light waves into audio waves. 
+
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
 ## Problem ##
   > Describe the problem your product solves.
+      Have you considered how an image can translate into sound? 
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+      Because my application was heavily reliant on an AI visual detection, the difficulty lied in choosing an api that would provide me with relevant data. I discovered Clarifai which could extrapolate concepts from photos like colors, objects, textures, and patterns.
+      The component of colors that comprise a photo can be associated to feelings. Similarly, listening to music can elicit emotional dimensions: happy, sad, calm, angry, lively, dreary, active, passive, strong, or weak. Thus to bind color-to-music concepts together, I need an AI to return key words that I could use to query Spotify’s songs.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.

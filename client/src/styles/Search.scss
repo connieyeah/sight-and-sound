@@ -1,0 +1,24 @@
+$font-stack:    Helvetica, sans-serif;
+
+.search__container {
+  position: inline-block
+}
+
+.embed__container {
+  // position: relative;
+  position: inline-block;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+  .embed__container iframe,
+  .embed__container object,
+  .embed__container embed {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
