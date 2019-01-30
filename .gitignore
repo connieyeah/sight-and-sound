@@ -33,6 +33,3 @@ bower_components/
 .floobit
 .floo
 .flooignore
-
-# server
-server/
