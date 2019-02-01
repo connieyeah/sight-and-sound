@@ -19,13 +19,9 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-const appClarifai = new Clarifai.App({apiKey: 'c242e9881b394568b5303941036b053f'});
-
-
 
 // first call
-const client_id = '91a6997d074c4e05b7309537d8437839';
-const client_secret = '0d121ef289d246d3884a5049442ad125';
+
 const redirect_uri = 'http://localhost:5000/callback';
 
 /**
