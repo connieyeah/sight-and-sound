@@ -21,9 +21,7 @@ An application that ties in visual and auditory senses, turning light waves into
 ## Background ##
   Have you considered how an image can translate into sound? 
   
-  Because my application was heavily reliant on an AI visual detection, the difficulty lied in choosing an api that would provide me with relevant data. I discovered Clarifai which could extrapolate concepts from photos like colors, objects, textures, and patterns.
-  
-  The component of colors that comprise a photo can be associated to feelings. Similarly, listening to music can elicit emotional dimensions: happy, sad, calm,angry, lively, dreary, active, passive, strong, or weak. Thus to bind color-to-music concepts together, I need an AI to return key words that I could use to query Spotify’s songs.
+  From the saying "a photo is worth a thousand words," stemmed the concept of my application. Because my application was heavily reliant on AI visual detection, the difficulty lied in choosing an api that would provide me with relevant data. I chose Clarifai because it could extrapolate concepts from photos like colors, objects, textures, and patterns. The facet of colors which comprise a photo can be associated to feelings. Similarly, listening to music can elicit emotional dimensions: happy, sad, calm,angry, lively, dreary, active, passive, strong, or weak. Thus to bind color-to-music concepts together, I utilized Clarifai's AI detection to return key words that I could use to query Spotify’s songs and return relevant, related music to the photo.
 
 ## How to Get Started ##
   - Clone this project: `git clone https://github.com/connieyeah/sight-and-sound.git`
